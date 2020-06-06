@@ -1,0 +1,10 @@
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  grid-template-rows: 1fr; }
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: black; }
