@@ -2,7 +2,12 @@ body {
     position: relative;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 11fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     font-family: sans-serif;
+}
+main {
+    & > section {
+        min-height: 100vh;
+    }
 }
