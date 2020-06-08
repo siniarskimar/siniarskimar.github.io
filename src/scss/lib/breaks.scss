@@ -1,0 +1,16 @@
+$break-sm: 576px;
+$break-md: 786px;
+$break-lg: 992px;
+$break-xl: 1200px;
+
+@mixin breakOnUp($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+@mixin breakOnDown($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content
+    }
+}
+
