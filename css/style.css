@@ -35,7 +35,7 @@ body > section {
     display: flex;
     flex-direction: column;
     padding: 40px;
-    background-color: rgba(150, 150, 150, 0.4); }
+    background-image: linear-gradient(to right, rgba(150, 150, 150, 0.4) 98%, rgba(0, 0, 0, 0) 100%); }
     #home > .container > .title {
       font-size: 36px;
       font-family: 'Amaranth', sans-serif;

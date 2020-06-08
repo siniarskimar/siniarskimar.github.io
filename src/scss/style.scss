@@ -42,7 +42,7 @@ body {
         display: flex;
         flex-direction: column;
         padding: 40px;
-        background-color: hsla(0, 0%, 59%, 0.4);
+        background-image: linear-gradient(to right,hsla(0, 0%, 59%, 0.4) 98%, rgba(0,0,0,0) 100%);
         & > .title {
             font-size: 36px;
             font-family: 'Amaranth', sans-serif;
@@ -62,9 +62,6 @@ body {
                 width: 10px;
                 background-color: red;
                 margin-right: 10px;
-            }
-
-            &:nth-child(3) {
             }
         }
     }
