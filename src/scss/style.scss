@@ -1,13 +1,71 @@
+@import "./lib/breaks.scss";
 body {
-    position: relative;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    font-family: sans-serif;
+    grid-template-rows: repeat(1, 1fr);
+    font-family: 'Titillium Web', sans-serif;
 }
-main {
+body {
     & > section {
         min-height: 100vh;
+    }
+}
+#home {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: ' ';
+        background-image: url("../res/home-bg.jpg");
+        background-size: cover;
+        filter: grayscale(1) blur(2px);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    color: white;
+
+    @include breakOnUp($break-md) {
+        grid-template-columns: 70% auto;
+    }
+    @include breakOnUp($break-lg) {
+        grid-template-columns: 60% auto;
+    }
+
+    & > .container {
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        background-color: hsla(0, 0%, 59%, 0.4);
+        & > .title {
+            font-size: 36px;
+            font-family: 'Amaranth', sans-serif;
+            font-weight: normal;
+        }
+        & .name {
+            font-size: 64px;
+            font-weight: bold;
+        }
+        & > .spanner {
+            display: flex;
+            flex-direction: row;
+            margin: -4px;
+            height: 50px;
+
+            &:first-child {
+                width: 10px;
+                background-color: red;
+                margin-right: 10px;
+            }
+
+            &:nth-child(3) {
+            }
+        }
     }
 }
