@@ -3,7 +3,8 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(1, 1fr);
-  font-family: 'Titillium Web', sans-serif; }
+  font-family: 'Titillium Web', sans-serif;
+  scroll-behavior: smooth; }
 
 body > section {
   min-height: 100vh; }
@@ -35,7 +36,12 @@ body > section {
     display: flex;
     flex-direction: column;
     padding: 40px;
-    background-image: linear-gradient(to right, rgba(150, 150, 150, 0.4) 98%, rgba(0, 0, 0, 0) 100%); }
+    background-color: rgba(150, 150, 150, 0.4);
+    justify-content: center; }
+    @media (min-width: 786px) {
+      #home > .container {
+        background-image: linear-gradient(to right, rgba(150, 150, 150, 0.4) 98%, rgba(0, 0, 0, 0) 100%);
+        background-color: transparent; } }
     #home > .container > .title {
       font-size: 36px;
       font-family: 'Amaranth', sans-serif;
@@ -43,12 +49,20 @@ body > section {
     #home > .container .name {
       font-size: 64px;
       font-weight: bold; }
-    #home > .container > .spanner {
+    #home > .container .spanner {
       display: flex;
       flex-direction: row;
-      margin: -4px;
-      height: 50px; }
-      #home > .container > .spanner:first-child {
-        width: 10px;
-        background-color: red;
-        margin-right: 10px; }
+      margin-left: -4px;
+      margin-top: 100px; }
+    #home > .container .desc {
+      font-size: 24px; }
+      #home > .container .desc > .roles {
+        font-weight: bold; }
+    #home > .container #seeMyWork {
+      text-decoration: none;
+      background-color: #39D0FF;
+      color: white;
+      width: 100px;
+      padding: 10px 30px;
+      border-radius: 25px;
+      text-align: center; }

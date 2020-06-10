@@ -1,10 +1,11 @@
-@import "./lib/breaks.scss";
+@import "./lib/_breaks.scss";
 body {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(1, 1fr);
     font-family: 'Titillium Web', sans-serif;
+    scroll-behavior: smooth;
 }
 body {
     & > section {
@@ -31,10 +32,10 @@ body {
     grid-template-columns: 1fr;
     color: white;
 
-    @include breakOnUp($break-md) {
+    @include break-up($break-md) {
         grid-template-columns: 70% auto;
     }
-    @include breakOnUp($break-lg) {
+    @include break-up($break-lg) {
         grid-template-columns: 60% auto;
     }
 
@@ -42,27 +43,43 @@ body {
         display: flex;
         flex-direction: column;
         padding: 40px;
-        background-image: linear-gradient(to right,hsla(0, 0%, 59%, 0.4) 98%, rgba(0,0,0,0) 100%);
+        background-color: hsla(0, 0%, 59%, 0.4);
+        justify-content: center;
+
+        @include break-up($break-md) {
+            background-image: linear-gradient(to right,hsla(0, 0%, 59%, 0.4) 98%, rgba(0,0,0,0) 100%);
+            background-color: transparent;
+        }
+
         & > .title {
             font-size: 36px;
             font-family: 'Amaranth', sans-serif;
             font-weight: normal;
         }
-        & .name {
+        .name {
             font-size: 64px;
             font-weight: bold;
         }
-        & > .spanner {
+        .spanner {
             display: flex;
             flex-direction: row;
-            margin: -4px;
-            height: 50px;
-
-            &:first-child {
-                width: 10px;
-                background-color: red;
-                margin-right: 10px;
+            margin-left: -4px;
+            margin-top: 100px;
+        }
+        .desc {
+            font-size: 24px;
+            & > .roles {
+                font-weight: bold;
             }
+        }
+        #seeMyWork {
+            text-decoration: none;
+            background-color: #39D0FF;
+            color: white;
+            width: 100px;
+            padding: 10px 30px;
+            border-radius: 25px;
+            text-align: center;
         }
     }
 }
