@@ -1,68 +1,101 @@
+html {
+  box-sizing: border-box; }
+
 body {
-  min-height: 100vh;
+  --sections: 3;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  font-family: 'Titillium Web', sans-serif;
-  scroll-behavior: smooth; }
-
-body > section {
-  min-height: 100vh; }
+  grid-template-rows: repeat(var(--sections), 1fr);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  font-family: 'Titillium Web', sans-serif; }
+  body > section {
+    min-height: 100vh; }
 
 #home {
   position: relative;
   display: grid;
-  grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-  color: white; }
-  #home::after {
-    position: absolute;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  color: white;
+  background-image: linear-gradient(to right, #96969666 100%, #96969666 100%);
+  padding: 0 20px; }
+  #home::before {
     content: ' ';
-    background-image: url("../res/home-bg.jpg");
-    background-size: cover;
-    filter: grayscale(1) blur(2px);
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; }
+    background-image: url("../res/home-bg.jpg");
+    background-size: cover;
+    z-index: -1;
+    filter: blur(3px); }
+  @media (min-width: 576px) {
+    #home {
+      padding-left: 50px;
+      padding-right: 30%;
+      background-image: linear-gradient(to right, #96969666 70%, #96969600 71%); } }
   @media (min-width: 786px) {
     #home {
-      grid-template-columns: 70% auto; } }
-  @media (min-width: 992px) {
-    #home {
-      grid-template-columns: 60% auto; } }
-  #home > .container {
+      padding-right: 40%;
+      background-image: linear-gradient(to right, #96969666 60%, #96969600 61%); } }
+  #home .top {
     display: flex;
     flex-direction: column;
-    padding: 40px;
-    background-color: rgba(150, 150, 150, 0.4);
-    justify-content: center; }
-    @media (min-width: 786px) {
-      #home > .container {
-        background-image: linear-gradient(to right, rgba(150, 150, 150, 0.4) 98%, rgba(0, 0, 0, 0) 100%);
-        background-color: transparent; } }
-    #home > .container > .title {
-      font-size: 36px;
-      font-family: 'Amaranth', sans-serif;
+    align-items: center;
+    justify-content: flex-end; }
+    @media (min-width: 288px) {
+      #home .top {
+        align-items: flex-start; } }
+  #home .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; }
+    #home .bottom p {
+      margin: 0.5em;
+      font-size: 18px; }
+      @media (min-width: 576px) {
+        #home .bottom p {
+          font-size: 24px; } }
+    @media (min-width: 288px) {
+      #home .bottom {
+        align-items: flex-start; } }
+  #home .title {
+    font-size: 42px;
+    font-family: "Amaranth", sans-serif;
+    font-weight: bold; }
+    #home .title .pretitle {
+      font-size: 32px;
       font-weight: normal; }
-    #home > .container .name {
-      font-size: 64px;
-      font-weight: bold; }
-    #home > .container .spanner {
-      display: flex;
-      flex-direction: row;
-      margin-left: -4px;
-      margin-top: 100px; }
-    #home > .container .desc {
-      font-size: 24px; }
-      #home > .container .desc > .roles {
-        font-weight: bold; }
-    #home > .container #seeMyWork {
-      text-decoration: none;
-      background-color: #39D0FF;
-      color: white;
-      width: 100px;
-      padding: 10px 30px;
-      border-radius: 25px;
-      text-align: center; }
+      @media (min-width: 786px) {
+        #home .title .pretitle {
+          font-size: 48px; } }
+    @media (min-width: 576px) {
+      #home .title {
+        font-size: 52px; } }
+    @media (min-width: 786px) {
+      #home .title {
+        font-size: 64px; } }
+  #home .roles {
+    line-height: 1.5;
+    font-weight: bold; }
+  #home #btn-seeMyWork {
+    background-color: #39D0FF;
+    color: white;
+    width: 75%;
+    margin: 30% auto 0 auto;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold; }
+    @media (min-width: 288px) {
+      #home #btn-seeMyWork {
+        margin: 20% auto 0 auto; } }
+    @media (min-width: 576px) {
+      #home #btn-seeMyWork {
+        margin: 50px 0 0 0;
+        width: 200px; } }

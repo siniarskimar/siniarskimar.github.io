@@ -1,3 +1,4 @@
+$break-xm: 288px;
 $break-sm: 576px;
 $break-md: 786px;
 $break-lg: 992px;
@@ -10,6 +11,12 @@ $break-xl: 1200px;
 }
 @mixin break-down($breakpoint) {
     @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin break-between($min, $max) {
+    @media (min-width: $min) and (max-width: $max) {
         @content
     }
 }
