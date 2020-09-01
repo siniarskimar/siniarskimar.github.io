@@ -14,10 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/setup-node@v1
       with:
         node-version: '13'
-        check-latest: true
     - name: Install the dependencies
       run: npm install
     - name: Build the project
