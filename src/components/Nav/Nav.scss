@@ -1,0 +1,11 @@
+@import "../colors";
+
+.Nav {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+}
+.Nav-links {
+    display: flex;
+    flex-direction: row;
+}
