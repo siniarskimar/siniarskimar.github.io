@@ -19,7 +19,7 @@ jobs:
         node-version: '13'
         check-latest: true
     - name: Install the dependencies
-      run 
+      run: npm install
     - name: Build the project
       run: npm run build
     - name: Publish to gh-pages branch
