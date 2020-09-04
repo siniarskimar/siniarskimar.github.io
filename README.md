@@ -1,5 +1,7 @@
 # siniarskimarcin.github.io
 
+![Build status](https://github.com/siniarskimar/siniarskimar.github.io/workflows/.github/workflows/build.yml/badge.svg)
+
 Portfolio website made with ReactJS
 
 ## Available Scripts
