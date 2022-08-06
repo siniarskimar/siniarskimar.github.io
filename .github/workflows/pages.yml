@@ -36,6 +36,7 @@ jobs:
           node-version: 18
       - name: Setup Pages
         uses: actions/configure-pages@v1
+      - run: npm install
       - run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
